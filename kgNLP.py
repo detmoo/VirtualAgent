@@ -19,8 +19,10 @@ lemmatizer=nltk.WordNetLemmatizer()
 mybigrams=[('red','wine'),('customer','service'),('personal','details')]
 mytagfixes={('provide','n'):('provide','v')}
 punctuation={'.',',',';','-',':'}
+notstops=['not','_']
 stops=set(nltk.corpus.stopwords.words('english'))
 stops.update(punctuation)
+(stops.remove(i) for i in notstops)
 #stemmer=nltk.PorterStemmer()
 
 ch_grammar=r""" 
@@ -114,6 +116,9 @@ def clean_chunks(chunk_state):
             inner=[chunk_state[count][0]] 
             outter.append(inner) 
             inner=[]
+        for bit in outter:
+            if (len(bit)==1 and not(any(n==bit[0] for n in notstops))):
+                outter.remove(bit)
     return outter 
 
 
@@ -123,11 +128,10 @@ def process_language(phrase):
     #lemmas=list([lemma_with_default(T,mytagfixes) for T in processedPhrase])
     chunks=clean_chunks(list(nltk.tree2conlltags(cp.parse(processedPhrase))))
     processedPhrase=remove_stops_puncs(processedPhrase,stops)
-    
-    lemmas=list([lemma_with_default(T,mytagfixes) for T in processedPhrase])
+    #lemmas=list([lemma_with_default(T,mytagfixes) for T in processedPhrase])
     #synons=list([get_synset(lemm) for lemm in lemmas])
     #return {'keywords':processedPhrase, 'lemmas':lemmas, 'synsets':synons}
-    return {'keywords':processedPhrase,'short_chunks':chunks}
+    return processedPhrase, chunks
     #antonyms?
 
 
