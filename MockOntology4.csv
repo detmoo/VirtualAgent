@@ -1,0 +1,13 @@
+Index,Account,Balance,Personal Details,Subscription,Address,Home Address,Billing Address,Date of Birth,Expiry,Type,Due Date,Amount,Prob,Status,Active,Description,Category,Level
+Account,0,1,1,1,0,0,0,0,0,0,0,0,0.083333333,3,1,Account,Any,1
+Balance,0,0,0,0,0,0,0,0,0,0,1,1,0.083333333,3,1,Balance,Balance,2
+Personal Details,0,0,0,0,1,0,0,1,0,0,0,0,0.083333333,3,1,Personal Details,Personal Details,2
+Subscription,0,0,0,0,0,0,0,0,1,1,0,0,0.083333333,3,1,Subscription,Subscription,2
+Address,0,0,0,0,0,1,1,0,0,0,0,0,0.083333333,3,1,Address,Personal Details,3
+Home Address,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,Home,Personal Details,4
+Billing Address,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,Billing,Personal Details,4
+Date of Birth,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,DOB,Personal Details,4
+Expiry,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,Expiry,Subscription,3
+Type,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,Type,Subscription,3
+Due Date,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,Due Date,Balance,3
+Amount,0,0,0,0,0,0,0,0,0,0,0,0,0.083333333,3,1,Amount,Balance,3

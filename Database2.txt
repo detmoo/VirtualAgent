@@ -1,0 +1,8 @@
+Index	Category	Value	Cat
+Home Address	Personal Details	70 Mark Lane	Personal Details
+Billing Address	Personal Details	30 Fenchurch Street	Personal Details
+Date of Birth	Personal Details	Mar-17	Personal Details
+Expiry	Subscription	Mar-19	Subscription
+Type	Subscription	Annual	Subscription
+Due Date	Balance	Mar-18	Balance
+Amount	Balance	1234.56	Balance
